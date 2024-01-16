@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karty Graficzne</title>
+</head>
+<body>
+
+    <h1>Informacje o Kartach Graficznych</h1>
+
+    <form id="graphicsCardForm">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required>
+        <br>
+        <label for="manufacturer">Producent:</label>
+        <input type="text" id="manufacturer" name="manufacturer" required>
+        <br>
+        <label for="vram">Pamięć VRAM:</label>
+        <input type="text" id="vram" name="vram" required>
+        <br>
+        <button type="button" onclick="addGraphicsCard()">Dodaj Kartę Graficzną</button>
+    </form>
+
+    <table border="1" id="graphicsCardTable">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Producent</th>
+                <th>Pamięć VRAM</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dane będą dodawane dynamicznie -->
+        </tbody>
+    </table>
+
+    <script>
+        function addGraphicsCard() {
+            // Pobieranie danych z formularza
+            var model = document.getElementById('model').value;
+            var manufacturer = document.getElementById('manufacturer').value;
+            var vram = document.getElementById('vram').value;
+
+            // Tworzenie nowego wiersza w tabeli
+            var table = document.getElementById('graphicsCardTable').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            cell1.innerHTML = model;
+            cell2.innerHTML = manufacturer;
+            cell3.innerHTML = vram;
+
+            // Czyszczenie formularza
+            document.getElementById('graphicsCardForm').reset();
+        }
+    </script>
+
+</body>
+</html>

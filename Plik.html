@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobierz plik</title>
+</head>
+<body>
+
+    <h1>Pobierz plik</h1>
+
+    <form action="/download" method="get">
+        <label for="fileName">Nazwa pliku:</label>
+        <input type="text" id="fileName" name="fileName" required>
+        <br>
+        <label for="fileUrl">Adres URL pliku:</label>
+        <input type="url" id="fileUrl" name="fileUrl" required>
+        <br>
+        <button type="submit">Pobierz plik</button>
+    </form>
+
+</body>
+</html>
